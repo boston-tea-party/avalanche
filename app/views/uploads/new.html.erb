@@ -6,7 +6,7 @@
 </section>
 
 <ol class="messages">
-  <%= @uploads.each do |upload| %>
+  <% @uploads.each do |upload| %>
     <li class="message">
       <div class="message-body"><img src="<%= upload.document %>" data-sha="<%= upload.sha256 %>"></div>
       <section class="metadata">
