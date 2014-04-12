@@ -2,3 +2,11 @@
   <%= form.file_field :document %>
   <%= form.submit 'Upload' %>
 <% end %>
+
+<ol class="messages">
+  <%= @uploads.each do |upload| %>
+    <li class="message">
+      <img src="<%= upload.document %>" data-sha="<%= upload.sha256 %>">
+    </li>
+  <% end %>
+</ol>
