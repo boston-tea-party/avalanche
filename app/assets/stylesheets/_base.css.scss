@@ -1,4 +1,5 @@
 $border-color: rgba(#999, 0.2);
+$serif: georgia;
 
 body {
   background: #fff;
@@ -40,9 +41,25 @@ header {
   .message {
     border: 1px solid $border-color;
     border-radius: 3px;
-    line-height: 1.4;
+    font-family: georgia;
+    line-height: 1.5;
     margin-bottom: 2em;
-    padding: 1em;
+
+    .message-body {
+      margin: 0;
+      padding: 1em;
+    }
+
+    .metadata {
+      border-top: 1px solid $border-color;
+      color: #999;
+      font-size: 0.8em;
+      padding: 0.5em 1.25em;
+
+      span {
+        display: block;
+      }
+    }
   }
 }
 
