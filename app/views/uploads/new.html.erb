@@ -1,4 +1,5 @@
 <section class="add-private-key">
+  <p class="form-description">Paste your private key below. It will be held in local storage only, not sent to the server.</p>
   <form action="#" id="private-key">
     <textarea id="private-key-text"></textarea>
     <input type="submit" id="submit-private-key" value="Submit">
@@ -11,6 +12,7 @@
 </section>
 
 <section class="post-message">
+  <p class="form-description">Upload your content below. It will be signed with your private key.</p>
   <%= form_for @upload do |form| %>
     <%= form.file_field :document %>
     <input type="hidden" id="signed_file">
