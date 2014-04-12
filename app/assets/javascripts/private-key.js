@@ -4,6 +4,8 @@ var key_form = $("form#private-key"),
 function add_private_key() {
   var private_key = $("#private-key-text").val();
   localStorage.setItem("private_key", private_key);
+  $(".post-message").show();
+  $(".add-private-key").hide();
 }
 
 function handle_file(e) {
