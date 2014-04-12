@@ -1,4 +1,11 @@
 <section class="post-message">
+  <form action="#" id="private-key">
+    <textarea id="private-key-text"></textarea>
+    <input type="submit">
+  </form>
+</section>
+
+<section class="post-message">
   <%= form_for @upload do |form| %>
     <%= form.file_field :document %>
     <%= form.submit 'Upload' %>
