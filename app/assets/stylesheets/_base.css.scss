@@ -70,8 +70,23 @@ header {
   }
 }
 
-.add-private-key {
+.private-key-success,
+.private-key-status {
+  background: #f7f7f7;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
   display: none;
+  margin: 0 0 2em 0;
+  padding: 0.25em;
+  text-align: center;
+
+  p {
+    font-size: 1.25em;
+  }
+
+  a {
+    color: #000;
+  }
 }
 
 .messages {
