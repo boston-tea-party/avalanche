@@ -127,6 +127,16 @@ header {
 
       span {
         display: block;
+        padding-left: 1.25em;
+        position: relative;
+
+        &:before {
+          font-size: 0.85em;
+          left: 0;
+          margin-right: 0.7em;
+          position: absolute;
+          top: 0.2em;
+        }
       }
 
       a {
