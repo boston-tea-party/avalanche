@@ -10,6 +10,7 @@ gem 'flutie'
 gem 'high_voltage'
 gem 'jquery-rails'
 gem 'neat'
+gem 'paperclip'
 gem 'pg'
 gem 'rack-timeout'
 gem 'rails', '>= 4.0.3'
@@ -35,6 +36,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'minitest'
   gem 'capybara-webkit', '>= 1.0.0'
   gem 'database_cleaner'
   gem 'launchy'

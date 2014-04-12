@@ -1,4 +1,5 @@
 development: &default
+  port: 5433 
   adapter: postgresql
   database: avalanche_development
   encoding: utf8
