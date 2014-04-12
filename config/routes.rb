@@ -1,4 +1,4 @@
 Avalanche::Application.routes.draw do
   root to: 'uploads#new'
-  resources :uploads, only: :create
+  resources :uploads, only: [:create, :index]
 end
