@@ -3,7 +3,13 @@ require 'digest/sha2'
 class Upload < ActiveRecord::Base
   has_attached_file :document
 
-  after_create :save_attachment, :set_sha256
+  after_create :save_attachment, :set_sha256, :persist_key
+
+  def keyid
+     sig = nil
+     crypto.verify(signature){ | sig_ | sig = sig_ }
+     sig.fpr
+  end
 
   private
 
@@ -17,6 +23,12 @@ class Upload < ActiveRecord::Base
     update_attribute(:sha256, compute_sha256)
   end
 
+  def persist_key
+      GPGME::Ctx.new do |ctx|
+         ctx.import(GPGME::Data.new(public_key))
+      end
+  end
+
   def compute_sha256
     sha256er.hexdigest(read_document)
   end
@@ -27,5 +39,9 @@ class Upload < ActiveRecord::Base
 
   def read_document
     File.read(document.path)
+  end
+
+  def crypto
+    GPGME::Crypto.new
   end
 end

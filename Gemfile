@@ -20,6 +20,7 @@ gem 'simple_form'
 gem 'title'
 gem 'uglifier'
 gem 'unicorn'
+gem 'gpgme'
 
 group :development do
   gem 'foreman'
