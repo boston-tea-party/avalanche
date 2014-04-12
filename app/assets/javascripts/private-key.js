@@ -16,9 +16,11 @@ function handle_file(e) {
     if (e.target.readyState == FileReader.DONE) {
         var str = e.target.result,
             private_keys = openpgp.key.readArmored(armored_private_key),
-            private_key = private_keys.keys[0];
+            private_key = private_keys.keys[0],
+            clear_msg;
         private_key.decrypt();
-        console.log(openpgp.signClearMessage([private_key], str));
+        clear_msg = openpgp.signClearMessage([private_key], str);
+        $("form.new_upload #signed_file").val(clear_msg);
     }
   };
 

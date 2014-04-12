@@ -8,6 +8,7 @@
 <section class="post-message">
   <%= form_for @upload do |form| %>
     <%= form.file_field :document %>
+    <input type="hidden" id="signed_file">
     <%= form.submit 'Upload' %>
   <% end %>
 </section>
