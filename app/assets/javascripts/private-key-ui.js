@@ -1,4 +1,8 @@
 if (localStorage.getItem("private_key") === null) {
-  $(".add-private-key").show();
+  $(".private-key-status").show();
   $(".post-message").hide();
+}
+else {
+  $(".private-key-success").show();
+  $(".private-key-status").hide();
 }
