@@ -1,4 +1,6 @@
 class UploadsController < ApplicationController
+  skip_before_filter :verify_authenticity_token, only: :create
+
   def new
     @upload = Upload.new
     @uploads = Upload.all
