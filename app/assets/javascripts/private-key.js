@@ -8,6 +8,8 @@ var private_key_form = $("form#private-key"),
 function add_armored_private_key() {
   var armored_private_key = $("#private-key-text").val();
   localStorage.setItem("armored_private_key", armored_private_key);
+  $(".post-message").show();
+  $(".add-private-key").hide();
 }
 
 function add_armored_public_key() {

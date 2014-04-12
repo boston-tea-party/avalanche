@@ -37,6 +37,7 @@ header {
   }
 }
 
+.add-private-key,
 .post-message {
   @include clearfix;
   background: #f7f7f7;
@@ -66,6 +67,10 @@ header {
     padding: 0.75em 0 0.5em 0;
     width: 25%;
   }
+}
+
+.add-private-key {
+  display: none;
 }
 
 .messages {
