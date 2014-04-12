@@ -1,12 +1,17 @@
-<%= form_for @upload do |form| %>
-  <%= form.file_field :document %>
-  <%= form.submit 'Upload' %>
-<% end %>
+<section class="post-message">
+  <%= form_for @upload do |form| %>
+    <%= form.file_field :document %>
+    <%= form.submit 'Upload' %>
+  <% end %>
+</section>
 
 <ol class="messages">
   <%= @uploads.each do |upload| %>
     <li class="message">
-      <img src="<%= upload.document %>" data-sha="<%= upload.sha256 %>">
+      <div class="message-body"><img src="<%= upload.document %>" data-sha="<%= upload.sha256 %>"></div>
+      <section class="metadata">
+        <span><a href="#">Name of uploader</a> on date</span>
+      </section>
     </li>
   <% end %>
 </ol>
