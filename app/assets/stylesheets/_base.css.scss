@@ -51,7 +51,8 @@ header {
   input[type="file"],
   .post-message-widget {
     float: left;
-    width: 75%;
+    margin: 0 3% 0 0;
+    width: 72%;
   }
 
   input[type="submit"] {
@@ -109,5 +110,21 @@ header {
       }
     }
   }
+}
+
+textarea {
+  border: 1px solid #999;
+  border-radius: $border-radius;
+  height: 100px;
+}
+
+p.form-description {
+  margin: 0 0 0.75em 0;
+}
+
+input[type="file"] {
+  background: #fff;
+  border-radius: $border-radius;
+  padding: 1em;
 }
 
