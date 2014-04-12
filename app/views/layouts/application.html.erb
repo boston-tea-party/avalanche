@@ -8,8 +8,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
-  <%= render 'flashes' -%>
-  <%= yield %>
+
+  <div class="container">
+    <header>
+    <h1><a href="/"><span>A</span><span>v</span>alanche</a></h1>
+    </header>
+
+    <%= render 'flashes' -%>
+    <%= yield %>
+  </div>
+
   <%= render 'javascript' %>
 </body>
 </html>
