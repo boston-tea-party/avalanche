@@ -1,9 +1,8 @@
 <section class="private-key-status">
-  <p>To post, please <a href="/pages/add-key">confirm your identity</a>.</p>
+  <p class="ss-key">To post, please <a href="/pages/add-key">confirm your identity</a>.</p>
 </section>
 
 <section class="post-message">
-  <p class="form-description">Upload your content below. It will be signed with your private key.</p>
   <%= form_for @upload do |form| %>
     <%= form.file_field :document %>
     <input type="hidden" id="signed_file">
