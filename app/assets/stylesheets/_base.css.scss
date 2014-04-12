@@ -45,12 +45,14 @@ header {
   margin: 0 0 2em 0;
   padding: 1em;
 
+
+  input[type="file"],
   .post-message-widget {
     float: left;
     width: 75%;
   }
 
-  button {
+  input[type="submit"] {
     @include appearance(none);
     background: #000;
     border: 0;
@@ -79,6 +81,10 @@ header {
     .message-body {
       margin: 0;
       padding: 1em;
+
+      img {
+        max-width: 100%;
+      }
     }
 
     .metadata {
@@ -89,6 +95,11 @@ header {
 
       span {
         display: block;
+      }
+
+      a {
+        color: #000;
+        text-decoration: none;
       }
     }
   }
