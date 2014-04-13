@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140412110846) do
+ActiveRecord::Schema.define(version: 20140413093052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,5 +25,7 @@ ActiveRecord::Schema.define(version: 20140412110846) do
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
   end
+
+  add_index "uploads", ["sha256"], name: "index_uploads_on_sha256", unique: true, using: :btree
 
 end

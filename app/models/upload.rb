@@ -2,6 +2,7 @@ require 'digest/sha2'
 
 class Upload < ActiveRecord::Base
   has_attached_file :document
+  validate :sha256, unique: true
 
   after_create :save_attachment, :set_sha256
 
