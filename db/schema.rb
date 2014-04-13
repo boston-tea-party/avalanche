@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140413093052) do
+ActiveRecord::Schema.define(version: 20140413093718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "peers", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "target",     null: false
+    t.text     "port",       null: false
+  end
 
   create_table "uploads", force: true do |t|
     t.datetime "created_at"
