@@ -37,6 +37,7 @@ header {
   }
 }
 
+.add-public-key,
 .add-private-key,
 .post-message {
   @include clearfix;
@@ -46,6 +47,7 @@ header {
   margin: 0 0 2em 0;
   padding: 1em;
 
+  #public-key-text,
   #private-key-text,
   input[type="file"],
   .post-message-widget {
@@ -69,7 +71,7 @@ header {
   }
 }
 
-.private-key-success,
+.keys-success,
 .private-key-status {
   background: #1AA0E6;
   border: 1px solid #0095E6;

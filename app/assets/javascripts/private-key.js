@@ -1,20 +1,16 @@
 /*global $, localStorage, FileReader, document, openpgp, Uint16Array */
-var private_key_form = $("form#private-key"),
-    public_key_form = $("form#public-key"),
+var keys_form = $("form#keys"),
     file_form = $("form.new_upload"),
     armored_private_key = localStorage.getItem("armored_private_key"),
     armored_public_key = localStorage.getItem("armored_public_key");
 
-function add_armored_private_key() {
+function add_armored_private_public_key() {
   var armored_private_key = $("#private-key-text").val();
   localStorage.setItem("armored_private_key", armored_private_key);
-  $(".post-message").show();
-  $(".add-private-key").hide();
-}
-
-function add_armored_public_key() {
   var armored_public_key = $("#public-key-text").val();
   localStorage.setItem("armored_public_key", armored_public_key);
+  $(".post-message").show();
+  $(".add-private-key").hide();
 }
 
 function handle_file(e) {
@@ -39,6 +35,5 @@ function handle_file(e) {
   reader.readAsText(file, "ascii");
 }
 
-private_key_form.on("submit", add_armored_private_key);
-public_key_form.on("submit", add_armored_public_key);
+keys_form.on("submit", add_armored_private_public_key);
 file_form.on("change", handle_file);
