@@ -22,12 +22,21 @@ function handle_file(e) {
         var str = e.target.result,
             private_keys = openpgp.key.readArmored(armored_private_key),
             private_key = private_keys.keys[0],
-            clear_msg;
+            public_keys = openpgp.key.readArmored(armored_private_key),
+            public_key = public_keys.keys[0],
+            signed_file,
+            clear_msg,
+            signature;
         console.log(private_keys);
         console.log(private_key);
         private_key.decrypt();
-        clear_msg = openpgp.signClearMessage([private_key], str);
-        $("form.new_upload #signed_file").val(clear_msg);
+        signed_file = openpgp.signClearMessage([private_key], str);
+        console.log(signed_file);
+        clear_msg = openpgp.cleartext.readArmored(signed_file);
+        console.log(clear_msg);
+        signature = openpgp.verifyClearSignedMessage([public_key], clear_msg);
+        console.log(signature);
+        $("form.new_upload #signed_file").val(signature);
         $("form.new_upload #public_key").val(armored_public_key);
     }
   };
