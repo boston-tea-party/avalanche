@@ -1,4 +1,4 @@
-$border-color: rgba(#999, 0.2);
+$border-color: rgba(#777, 0.2);
 $border-radius: 3px;
 $serif: georgia;
 $sans-serif: futura;
@@ -37,6 +37,8 @@ header {
   }
 }
 
+.add-public-key,
+.add-private-key,
 .post-message {
   @include clearfix;
   background: #f7f7f7;
@@ -45,12 +47,13 @@ header {
   margin: 0 0 2em 0;
   padding: 1em;
 
-
+  #public-key-text,
   #private-key-text,
   input[type="file"],
   .post-message-widget {
     float: left;
-    width: 75%;
+    margin: 0 0 0.5em 0;
+    width: 100%;
   }
 
   input[type="submit"] {
@@ -64,17 +67,48 @@ header {
     font-size: 1em;
     font-weight: bold;
     padding: 0.75em 0 0.5em 0;
-    width: 25%;
+    width: 100%;
+  }
+}
+
+.keys-success,
+.private-key-status {
+  background: #1AA0E6;
+  border: 1px solid #0095E6;
+  border-radius: $border-radius;
+  display: none;
+  margin: 0 0 2em 0;
+  padding: 1em 1em;
+
+  p {
+    color: #fff;
+    font-size: 1.25em;
+    margin: 0;
+    padding: 0 0 0 1.5em;
+    position: relative;
+
+    &:before {
+      font-size: 0.9em;
+      left: 0;
+      margin-right: 0.7em;
+      position: absolute;
+      top: 0.1em;
+    }
+  }
+
+  a {
+    color: #fff;
   }
 }
 
 .messages {
   list-style: none;
   padding: 0;
-  
+
   .message {
     border: 1px solid $border-color;
     border-radius: $border-radius;
+    box-shadow: 0 1px 1px 0 #f0f0f0;
     font-family: $serif;
     line-height: 1.5;
     margin-bottom: 2em;
@@ -90,12 +124,22 @@ header {
 
     .metadata {
       border-top: 1px solid $border-color;
-      color: #999;
+      color: #333;
       font-size: 0.8em;
       padding: 0.5em 1.25em;
 
       span {
         display: block;
+        padding-left: 1.25em;
+        position: relative;
+
+        &:before {
+          font-size: 0.85em;
+          left: 0;
+          margin-right: 0.7em;
+          position: absolute;
+          top: 0.2em;
+        }
       }
 
       a {
@@ -104,5 +148,22 @@ header {
       }
     }
   }
+}
+
+textarea {
+  border: 1px solid #999;
+  border-radius: $border-radius;
+  height: 100px;
+}
+
+p.form-description {
+  line-height: 1.4;
+  margin: 0 0 0.75em 0;
+}
+
+input[type="file"] {
+  background: #fff;
+  border-radius: $border-radius;
+  padding: 1em;
 }
 
